@@ -1,0 +1,39 @@
+<head>
+    <title>Shumana's blog</title>
+</head>
+<body>
+    {{>loginButtons}}
+    <h1>Shumana's blog</h1>
+    {{>blog}}
+    {{>listBlogs}}
+    
+
+</body>
+<template name="blog">
+<div class="row">
+<div class="container">
+    <form id="blogForm"> <fieldset> <legend>Blog post</legend> <label for="inputTitle" id="inputTitle" >Title <input id="blogTitle" type="text" placeholder="Post title"> </label></fieldset>
+     <div class="row">
+    <div class="large-12 columns">
+      <label>Textarea Label
+        <textarea id="blogBody" placeholder="Write here..."></textarea>
+      </label>
+    </div>
+  </div>
+        <button type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+     
+</template>
+
+<template name="listBlogs">
+    <div class="container">
+
+        <div class="row">
+    {{#each blogs}}
+    <h2>{{title}}</h2>
+    <p>{{body}}</p>
+    {{/each}}
+        </div></div>
+</template>
